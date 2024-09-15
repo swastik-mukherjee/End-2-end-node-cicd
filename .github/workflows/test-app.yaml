@@ -28,7 +28,7 @@ jobs:
               run: npm install
 
             - name: Unit Testing
-              run: MONGO_USERNAME=superuser MONGO_PASSWORD=SuperPassword MONGO_URI='mongodb+srv://supercluster.d83jj.mongo.net/superData' npm test 
+              run: MONGO_USERNAME=superuser MONGO_PASSWORD=SuperPassword MONGO_URI=mongodb+srv://supercluster.d83jj.mongo.net/superData npm test -- --bail=false 
 
             - name: Archive Test result
               uses: actions/upload-artifact@v3
