@@ -1,0 +1,33 @@
+name: Node app test
+
+on:
+    workflow_dispatch:
+        
+    push:
+        branches:
+            - main
+            - 'feat/*'
+
+jobs:
+    unit-tetsing:
+        name: Unit Testing
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Set up Nodejs version -18
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Unit Testing
+              run: npm test
+
+
+
+        
+    
