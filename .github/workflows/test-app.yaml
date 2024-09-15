@@ -7,7 +7,10 @@ on:
         branches:
             - main
             - 'feat-*'
-
+env:
+    MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/SuperData'
+    MONGO_USERNAME: ${{vars.MONGO_USERNAME}}
+    MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}
 jobs:
     unit-tetsing:
         name: Unit Testing
