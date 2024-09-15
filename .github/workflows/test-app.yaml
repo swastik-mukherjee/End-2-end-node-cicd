@@ -2,11 +2,11 @@ name: Node app test
 
 on:
     workflow_dispatch:
-        
+
     push:
         branches:
             - main
-            - 'feat/*'
+            - 'feat-*'
 
 jobs:
     unit-tetsing:
